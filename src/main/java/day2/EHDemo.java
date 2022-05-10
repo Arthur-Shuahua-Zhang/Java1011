@@ -26,7 +26,9 @@ public class EHDemo {
 //        });
 
 
-        Set<EHNode> treeSet = new TreeSet<>(new MyComparator());
+        Set<EHNode> treeSet = new TreeSet<>((n1, n2) -> n2.value - n1.value);
+
+
 
 
         treeSet.add(new EHNode(1));
@@ -37,13 +39,13 @@ public class EHDemo {
 }
 
 
-class MyComparator implements Comparator<EHNode> {
-
-    @Override
-    public int compare(EHNode o1, EHNode o2) {
-        return o2.value - o1.value;
-    }
-}
+//class MyComparator implements Comparator<EHNode> {
+//
+//    @Override
+//    public int compare(EHNode o1, EHNode o2) {
+//        return o2.value - o1.value;
+//    }
+//}
 
 
 
